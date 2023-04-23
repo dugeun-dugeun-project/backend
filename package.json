@@ -1,0 +1,34 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start:dev": "cross-env NODE_ENV=development nodemon src/app.js",
+        "start:prod": "cross-env NODE_ENV=production nodemon src/app.js",
+        "db_dev:create": "cross-env NODE_ENV=development npx sequelize db:create --config ./src/config/config.js",
+        "db_dev:migrate": "cross-env NODE_ENV=development npx sequelize db:migrate --config ./src/config/config.js --migrations-path ./src/migrations --models-path ./src/models",
+        "db_dev:drop": "cross-env NODE_ENV=test npx sequelize db:drop --config ./src/config/config.js",
+        "db_prod:create": "cross-env NODE_ENV=production npx sequelize db:create --config ./src/config/config.js",
+        "db_prod:migrate": "cross-env NODE_ENV=production npx sequelize db:migrate --config ./src/config/config.js --migrations-path ./src/migrations --models-path ./src/models",
+        "db_prod:drop": "cross-env NODE_ENV=production npx sequelize db:drop --config ./src/config/config.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.3.6",
+        "bcrypt": "^5.1.0",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "jsonwebtoken": "^9.0.0",
+        "mysql2": "^3.2.3",
+        "sequelize": "^6.31.0"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "nodemon": "^2.0.22",
+        "sequelize-cli": "^6.6.0"
+    }
+}
