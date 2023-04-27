@@ -1,6 +1,6 @@
-const env = require("../utill/env");
+import env from '../utill/env' ;
 
-const development = {
+export const development = {
     username: env.database.username,
     password: env.database.password,
     database: env.database.name,
@@ -14,7 +14,7 @@ const development = {
     },
 };
 
-const production = {
+export const production = {
     username: env.database.username,
     password: env.database.password,
     database: env.database.name,
@@ -29,4 +29,3 @@ const production = {
     logging: false,
 };
 
-module.exports = { development, production };
